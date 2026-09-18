@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  box-shadow: none;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}

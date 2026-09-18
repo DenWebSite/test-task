@@ -1,0 +1,243 @@
+body {
+  background-color: #fbfbfb;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card__top {
+  margin-block: 20px;
+}
+
+.card__title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card__middle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  column-gap: 40px;
+}
+
+.card__bascet-like {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  border: 1px solid var(--color-text-dark-gray);
+
+  margin-left: auto;
+  margin-bottom: 40px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.card__bascet-like::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: -160px;
+  bottom: -50%;
+  transform: translateY(-50%);
+
+  padding: 6px 10px;
+  background: var(--color-bg-gray);
+  color: var(--color-text-dark-gray);
+  font-size: 12px;
+  border-radius: var(--border-s);
+  border: 1px solid var(--color-text-red);
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+  pointer-events: none;
+}
+
+.card__bascet-like:hover,
+.card__bascet-like:focus {
+  border-color: var(--color-text-red);
+  color: var(--color-text-red);
+}
+
+.card__bascet-like:hover::after,
+.card__bascet-like:focus::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card__bascet {
+  max-width: 440px;
+  width: 100%;
+  color: var(--color-text-light-gray);
+}
+
+.card__bascet-item {
+  padding: 8px 14px;
+  margin-bottom: 10px;
+  background-color: var(--color-bg-gray);
+  border-radius: var(--border-s);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+.card__bascet-weight {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-dark-gray);
+}
+
+.card__bastet-articul {
+  font-size: 12px;
+}
+
+.card__bascet-price-new {
+  color: var(--color-text-red);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card__bascet-price-old {
+  font-size: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.card__bascet-price-old::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-text-light-gray);
+  top: 50%;
+}
+
+.card__bascet-count {
+  text-align: right;
+  font-size: 14px;
+}
+
+.card__bascet-count > span {
+  color: var(--color-text-dark-gray);
+}
+
+.card__bascet-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: var(--border-s);
+  padding: 10px;
+}
+
+.card__bascet-plus,
+.card__bascet-minus {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  border-radius: var(--border-s);
+}
+
+.card__bascet-plus:hover,
+.card__bascet-minus:hover {
+  animation: plus-minus 0.5s;
+}
+
+@keyframes plus-minus {
+  20% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card__bascet-total {
+  font-size: 20px;
+}
+
+.card__bottom {
+  margin-top: 70px;
+}
+
+.card__descr-title-inner {
+  background-color: var(--color-bg-dark);
+  color: white;
+  text-align: center;
+  padding: 18px 10px;
+}
+
+.card__descr-text-inner {
+  background-color: var(--color-bg-yellow);
+  padding: 50px 85px;
+  font-size: 14px;
+}
+
+.card__descr-text {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+.card__descr-subtitle {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.card__descr-list-item {
+  margin-left: 20px;
+  position: relative;
+}
+
+.card__descr-list-item::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 9px;
+  background-color: var(--color-bg-dark);
+  border-radius: 50px;
+  width: 5px;
+  height: 5px;
+}
+
+@media (max-width: 768px) {
+  .card__middle {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+  }
+
+  .card__bascet-item {
+    margin-bottom: 20px;
+  }
+
+  .card__descr-text-inner {
+    padding: 30px 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card__descr-text-inner {
+    padding: 20px 20px;
+  }
+}
